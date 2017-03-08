@@ -49,7 +49,6 @@ public class FigurasGeometricas2 {
                 inicicarTriangulo();
             } else if(opcion == 2) {
                 iniciarCuadradito();
-            
             } else if(opcion == 3) {
                 iniciarCirculo();
             } else if(opcion == 4) {
@@ -179,13 +178,10 @@ public class FigurasGeometricas2 {
      * Metodo de menu de opciones para un cuadrado o rectangulo
      */
     private void menuCuadradito(){
-        boolean validar = true;
         byte opcion;
-        do{
-            System.out.println("Opciones:");
-            System.out.println("1. Perimetro  2. Area");
-            opcion = leer.nextByte();
-        }while(!validar);
+        System.out.println("Opciones:");
+        System.out.println("1. Perimetro  2. Area  3. Tipo(cuadrado o rectangulo)");
+        opcion = leer.nextByte();
         resultadosCuadrado(opcion);
     }
     /**
@@ -199,6 +195,18 @@ public class FigurasGeometricas2 {
                 break;
             case 2:
                 System.out.println("Area: "+cuadradito.darArea());
+                break;
+            case 3:
+                byte tipo = cuadradito.validarTipo();
+                System.out.print("Es un: ");
+                if(tipo == 1){
+                    System.out.println("Cuadrado.");
+                }
+                else{
+                    if(tipo == 2){
+                        System.out.println("Rectangulo.");
+                    }
+                }
                 break;
         }
     }
